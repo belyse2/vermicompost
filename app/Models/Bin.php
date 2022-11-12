@@ -15,4 +15,17 @@ class Bin extends Model
     public function vermuser(){
         return $this->belongsTo(VermUser::class);
     }
+
+// wormtypes many to many relation
+// this bin has may contain more than on wormtype
+
+
+    public function Wormtype(){
+        
+        return $this->belongsToMany(Wormtype::class);
+    }
+
+    public function Location(){
+        return $this->hasOne(Location::class);
+    }
 }

@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('students', function (Blueprint $table) {
+        Schema::create('bin_locations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address');
-            $table->string('mobile');
+            $table->unsignedBigInteger('bin_id');
             $table->timestamps();
+            $table->string('country');
+            $table->string('district');
+            $table->string('cell');
+            $table->string('village');
+            $table->foreign('bin_id')->references('id')->on("bins")->onDelete("cascade");
         });
     }
 
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('bin_locations');
     }
 };
