@@ -16,6 +16,8 @@ class WormTypeController extends Controller
     public function index()
     {
         //
+
+        return wormType::all();
     }
 
     /**
