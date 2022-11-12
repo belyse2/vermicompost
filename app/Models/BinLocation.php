@@ -14,6 +14,8 @@ class BinLocation extends Model
         'cell',
         'village'
     ];
+
+  // this location belong to one bin
   
     public function Bin(){
         return $this->belongsTo(Bin::class);

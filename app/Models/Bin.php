@@ -25,6 +25,8 @@ class Bin extends Model
         return $this->belongsToMany(Wormtype::class);
     }
 
+
+
     public function Location(){
         return $this->hasOne(Location::class);
     }
