@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\studentController;
 //     return view('welcome');
 // });
 
-Route::get('/','App\Http\Controllers\PageController@index');
+// Route::get('/','App\Http\Controllers\PageController@index');
 
 Auth::routes();
 
