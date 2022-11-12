@@ -36,8 +36,8 @@ class BinController extends Controller
      */
     public function edit($id)
     {
-        $bin=Bin::find($id);
-        return Bin::$bin;
+        $bin = Bin::find($id);
+        return $bin;
     }
 
     public function show($id)
