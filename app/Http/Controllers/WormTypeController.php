@@ -15,7 +15,7 @@ class WormTypeController extends Controller
      */
     public function index()
     {
-        //
+        return WormType::all();
     }
 
     /**
@@ -36,7 +36,7 @@ class WormTypeController extends Controller
      */
     public function store(StoreWormTypeRequest $request)
     {
-        //
+        return WormType::create($request->all());
     }
 
     /**
@@ -47,7 +47,7 @@ class WormTypeController extends Controller
      */
     public function show(WormType $wormType)
     {
-        //
+        return WormType::find($id);
     }
 
     /**
@@ -58,7 +58,8 @@ class WormTypeController extends Controller
      */
     public function edit(WormType $wormType)
     {
-        //
+        $WormType = WormType::find($id);
+        return $WormType;
     }
 
     /**
@@ -68,9 +69,12 @@ class WormTypeController extends Controller
      * @param  \App\Models\WormType  $wormType
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWormTypeRequest $request, WormType $wormType)
+    public function update(UpdateWormTypeRequest $request, WormType $wormType , $id)
     {
-        //
+        $WormType=WormType::find($id);
+        $input =$request->all();
+        $WormType->update($input);
+        return $WormType;
     }
 
     /**
@@ -79,8 +83,13 @@ class WormTypeController extends Controller
      * @param  \App\Models\WormType  $wormType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(WormType $wormType)
+    public function destroy(WormType $wormType ,$id)
     {
-        //
+        WormType::destroy($id);
     }
+
+    // public function search($name_type )
+    // {
+    //     return WormType::where('name_type','like','%'.$name_type.'%')->get();
+    // }
 }

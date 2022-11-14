@@ -7,6 +7,7 @@ use App\Http\Controllers\BinController;
 use App\Http\Controllers\VermUserController;
 use App\Http\Controllers\BinConditionController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\WormTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,6 @@ Route::resource("/VermUser",VermUserController::class);
 Route::get('/VermUser/search/{Fname}',[VermUserController::class,'search']);
 Route::resource("/BinCondition",BinConditionController::class);
 Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
+Route::resource("/WormType",WormTypeController::class);
+Route::get('/WormType/search/{}',[WormTypeController::class,'search']);
 

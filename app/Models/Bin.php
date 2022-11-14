@@ -10,7 +10,8 @@ class Bin extends Model
     use HasFactory;
     protected $fillable=[
         "number",
-        "location"
+        "location",
+        "vemuser_id"
     ];
     public function vermuser(){
         return $this->belongsTo(VermUser::class);
