@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('verm_users', function (Blueprint $table) {
+        Schema::create('use_roles', function (Blueprint $table) {
             $table->id();
-            $table->string("Fname");
-            $table->string("Lname");
-            $table->string("location");
-            $table->string("Gender");
-            $table->string("Email")->unique();
-            $table->string("role_type");
+            $table->unsignedBigInteger("vemuser_id");
+            $table->unsignedBigInteger("role_id");
             $table->timestamps();
+            $table->foreign("vemuser_id")->references('id')->on("verm_users")->onDelete("cascade");
+            $table->foreign("role_id")->references('id')->on("roles")->onDelete("cascade");
         });
     }
 
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('verm_users');
+        Schema::dropIfExists('use_roles');
     }
 };

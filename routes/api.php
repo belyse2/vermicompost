@@ -33,3 +33,6 @@ Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
 Route::resource("/WormType",WormTypeController::class);
 Route::get('/WormType/search/{}',[WormTypeController::class,'search']);
 
+// app/Http/routes.php,
+Route::get('/welcome',function() {return view('welcome');});
+

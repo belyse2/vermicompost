@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('verm_users', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string("Fname");
-            $table->string("Lname");
-            $table->string("location");
-            $table->string("Gender");
-            $table->string("Email")->unique();
-            $table->string("role_type");
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('verm_users');
+        Schema::dropIfExists('roles');
     }
 };
