@@ -13,8 +13,8 @@ class BinController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return Bin::all();
+    {   $data= Bin::all();
+        return view('pages/bins',compact('data'));
     }
 
     /**

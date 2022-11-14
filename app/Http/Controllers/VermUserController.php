@@ -34,11 +34,11 @@ class VermUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $VermUser=VermUser::find($id);
-        return VermUser::$bin;
-    }
+    // public function edit($id)
+    // {
+    //     $VermUser=VermUser::find($id);
+    //     return VermUser::$bin;
+    // }
 
     public function show($id)
     {

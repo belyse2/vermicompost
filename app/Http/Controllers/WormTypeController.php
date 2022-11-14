@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\WormType;
 use App\Http\Requests\StoreWormTypeRequest;
 use App\Http\Requests\UpdateWormTypeRequest;
+use GuzzleHttp\Psr7\Request;
 
 class WormTypeController extends Controller
 {
@@ -25,9 +26,10 @@ class WormTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create( Request $request)
     {
         //
+        
     }
 
     /**
@@ -39,6 +41,7 @@ class WormTypeController extends Controller
     public function store(StoreWormTypeRequest $request)
     {
         //
+        return WormType::create($request ->all());
     }
 
     /**
@@ -47,9 +50,11 @@ class WormTypeController extends Controller
      * @param  \App\Models\WormType  $wormType
      * @return \Illuminate\Http\Response
      */
-    public function show(WormType $wormType)
+    public function show(WormType $id)
     {
         //
+
+        return WormType::find($id);
     }
 
     /**
@@ -58,9 +63,11 @@ class WormTypeController extends Controller
      * @param  \App\Models\WormType  $wormType
      * @return \Illuminate\Http\Response
      */
-    public function edit(WormType $wormType)
+    public function edit(WormType $wormType, $id)
     {
         //
+
+       
     }
 
     /**
@@ -70,10 +77,15 @@ class WormTypeController extends Controller
      * @param  \App\Models\WormType  $wormType
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWormTypeRequest $request, WormType $wormType)
+    public function update(UpdateWormTypeRequest $request, WormType $wormType, $id)
     {
         //
+        $wormType = WormType::find($id);
+        $input = $request->all();
+        $wormType->update($input);
+        return $wormType;
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -81,8 +93,15 @@ class WormTypeController extends Controller
      * @param  \App\Models\WormType  $wormType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(WormType $wormType)
+    public function destroy($id)
     {
         //
+        WormType::destroy($id);
+    }
+
+
+    public function search($id)
+    {
+        return WormType::where('id','like','%'.$id.'%')->get();
     }
 }

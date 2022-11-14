@@ -7,6 +7,8 @@ use App\Http\Controllers\BinController;
 use App\Http\Controllers\VermUserController;
 use App\Http\Controllers\BinConditionController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\WormTypeController;
+use App\Models\WormType;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +27,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/Bin/search/{name}',[BinController::class,'search']);
 Route::resource("/Bin",BinController::class);
+
+
+
 Route::resource("/VermUser",VermUserController::class);
 Route::get('/VermUser/search/{Fname}',[VermUserController::class,'search']);
+
+
+Route::resource("/WormType", WormTypeController::class);
+Route::get('/VermUser/search/{Fname}',[WormTypeController::class,'search']);
+
+
+
 Route::resource("/BinCondition",BinConditionController::class);
 Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
 

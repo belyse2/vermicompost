@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('worm_types', function (Blueprint $table) {
             $table->id();
+            $table->string('wormName');
+            $table->string('wormdescription');
+            $table->string('wormSize');
             $table->timestamps();
         });
     }
