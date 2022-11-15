@@ -12,9 +12,9 @@ class WormType extends Model
 
 // field for wormtype table 
     protected $fillable=[
-        "name_type",
-        "size",
-        "life_span"
+        "wormName",
+        "wormSize",
+        "wormdescription"
     ];
 
    // this   worm type has many bins it contains or it contains in more than on bin 

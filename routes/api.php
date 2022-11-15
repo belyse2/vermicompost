@@ -8,6 +8,7 @@ use App\Http\Controllers\VermUserController;
 use App\Http\Controllers\BinConditionController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\WormTypeController;
+use App\Http\Controllers\BinLocationController;
 use App\Models\WormType;
 
 /*
@@ -41,4 +42,8 @@ Route::get('/VermUser/search/{Fname}',[WormTypeController::class,'search']);
 
 Route::resource("/BinCondition",BinConditionController::class);
 Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
+
+
+Route::resource("/Binlocation",BinLocationController::class);
+Route::get('/Binlocation/search/{}',[BinLocationController::class,'search']);
 

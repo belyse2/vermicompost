@@ -3,7 +3,7 @@
    
 </head>
 <body>
-    <p>cvbnjmklyfghjnhgbhnj</p>
+    <h1>Number of Bins</h1>
     <table>
         <tr>
             <td>number</td>

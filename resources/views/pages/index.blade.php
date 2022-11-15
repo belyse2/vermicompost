@@ -26,6 +26,9 @@
               <a class="nav-link active" aria-current="page" href="{{url('bins')}}">Bins</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#">Add Bins</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
