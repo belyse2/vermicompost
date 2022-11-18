@@ -9,7 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
-{
+{    
+    use HasRoles;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -18,9 +19,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        "Fname",
+        "Lname",
+        "location",
+        "Gender",
+        "Email",
+        'password'
+        
     ];
 
     /**
@@ -41,7 +46,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function binn(){
-        return $this->hasMany(\App\Bin::class);
+    public function bin(){
+        return $this->hasMany(Bin::class);
     }
 }

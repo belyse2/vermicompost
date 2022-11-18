@@ -13,8 +13,7 @@ class VermUser extends Model
         "Lname",
         "location",
         "Gender",
-        "Email",
-        "role_type"
+        "Email"
     ];
     public function bin(){
         return $this->hasMany(Bin::class);

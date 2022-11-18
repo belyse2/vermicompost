@@ -11,10 +11,10 @@ class Bin extends Model
     protected $fillable=[
         "number",
         "location",
-        "vemuser_id"
+        "user_id"
     ];
-    public function vermuser(){
-        return $this->belongsTo(VermUser::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
 // wormtypes many to many relation

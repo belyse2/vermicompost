@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string("location");
             $table->string("Gender");
             $table->string("Email")->unique();
-            $table->string("role_type");
             $table->timestamps();
         });
     }

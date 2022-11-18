@@ -17,10 +17,10 @@ return new class extends Migration
         Schema::create('bins', function (Blueprint $table) {
             $table->id();
             $table->integer("number");
-            $table->unsignedBigInteger("vemuser_id");
+            $table->unsignedBigInteger("user_id");
             $table->string("location");
             $table->timestamps();
-            $table->foreign("vemuser_id")->references('id')->on("verm_users")->onDelete("cascade");
+            $table->foreign("user_id")->references('id')->on("users")->onDelete("cascade");
         });
     }
 
