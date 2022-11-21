@@ -25,11 +25,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+Route::resource("/User",usercontroller::class);
+Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
+
 Route::get('/Bin/search/{name}',[BinController::class,'search']);
 Route::resource("/Bin",BinController::class);
 
-Route::resource("/VermUser",VermUserController::class);
-Route::get('/VermUser/search/{Fname}',[VermUserController::class,'search']);
+
 
 Route::resource("/BinCondition",BinConditionController::class);
 Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);

@@ -7,6 +7,16 @@ use App\Models\BinCondition;
 
 class BinConditionController extends Controller
 {
+
+
+
+    public function __construct()
+{
+    $this->middleware(['role:admin,vermiculturist']);
+}
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +27,8 @@ class BinConditionController extends Controller
         return BinCondition::all(); 
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -26,7 +38,16 @@ class BinConditionController extends Controller
     public function store(Request $request)
     {
         return BinCondition::create($request->all());  
+
+
+        
     }
+
+
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -38,6 +59,10 @@ class BinConditionController extends Controller
     {
         return BinCondition::find($id);
     }
+
+
+
+
 
     /**
      * Update the specified resource in storage.
@@ -53,6 +78,9 @@ class BinConditionController extends Controller
         $BinCondition->update($input);
         return $BinCondition;
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.
