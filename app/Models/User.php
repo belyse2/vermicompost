@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {    
     use HasRoles;
@@ -20,11 +21,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        "Fname",
-        "Lname",
+        //"lastname",
+        "name",
         "location",
-        "Gender",
-        "Email",
+        "gender",
+        "email",
         'password'
         
     ];
