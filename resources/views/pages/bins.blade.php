@@ -26,6 +26,7 @@
             <th scope="col">Bin_location</th>
             <th scope="col">Bin_created_at</th>
             <th scope="col">Updated_at</th>
+            <th scope="col">action</th>
            
           </tr>
         </thead>

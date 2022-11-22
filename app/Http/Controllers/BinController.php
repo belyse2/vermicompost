@@ -26,7 +26,9 @@ class BinController extends Controller
      */
     public function store(Request $request)
     {
-        return Bin::create($request->all());
+        // return Bin::create($request->all());
+        return view('pages/create_bin');
+
     }
 
     /**
@@ -77,11 +79,17 @@ class BinController extends Controller
         return Bin::where('number','like','%'.$number.'%')->get();
     }
 
-    public function viewfunction(){
-        return view('pages/bins');
-    }
+    // public function viewfunction(){
+    //     return view('pages/create_bin');
+    // }
+    public function create_bin(Request $request){
+       $bin=new Bin;
+       $bin->number=$request->BinNumber;
+       $bin->location=$request->BinLocation;
+       $bin->user_id=$request->UserId;
+       $bin->save();
+       return redirect('bins');
 
-    public function getData(){
-        
     }
+  
 }
