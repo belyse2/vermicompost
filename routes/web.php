@@ -60,15 +60,9 @@ Route::group(['middleware' =>['auth:sanctum']], function () {
 
 
 
-<<<<<<< HEAD
 //Route::post('/logout',[AuthController::class,'logout']);
 Route::resource("/User",App\Http\usercontroller::class);
 Route::resource("/Bin",App\Http\Controllers\BinController::class);
-=======
-Route::post('/logout',[AuthController::class,'logout']);
-Route::resource("/User",App\Http\usercontroller::class);
-Route::resource("/Bin",App\Http\BinController::class);
->>>>>>> f0f5ba6caf619e09fd0432433dde709137830870
 Route::resource("/BinCondition",App\Http\BinConditionController::class);
 Route::resource("/WormType",App\Http\WormTypeController::class);
 Route::resource("/User",App\Http\usercontroller::class);

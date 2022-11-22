@@ -20,13 +20,8 @@ class AuthController extends Controller
 
 
         $fields = $request->validate([
-<<<<<<< HEAD
          
             'name'  => 'required|string',
-=======
-            'firstname' => 'required|string',
-            'lastname'  => 'required|string',
->>>>>>> f0f5ba6caf619e09fd0432433dde709137830870
             'location'  => 'required|string',
             'gender'    => 'required|string',
             'email'     => 'required|string|unique:users,email',
@@ -39,13 +34,8 @@ class AuthController extends Controller
 
         $user = User::create([
 
-<<<<<<< HEAD
            
             'name' => $fields['name'],
-=======
-            'firstname' => $fields['firstname'],
-            'lastname' => $fields['lastname'],
->>>>>>> f0f5ba6caf619e09fd0432433dde709137830870
             'email' => $fields['email'],
             'location' => $fields['location'],
             'gender' => $fields['gender'],
