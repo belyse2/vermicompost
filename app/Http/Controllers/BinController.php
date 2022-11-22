@@ -14,7 +14,8 @@ class BinController extends Controller
      */
     public function index()
     {
-        return Bin::all();
+        $data=Bin::all();
+        return view('pages/bins',['data'=>$data]);
     }
 
     /**
@@ -74,5 +75,13 @@ class BinController extends Controller
     public function search($number)
     {
         return Bin::where('number','like','%'.$number.'%')->get();
+    }
+
+    public function viewfunction(){
+        return view('pages/bins');
+    }
+
+    public function getData(){
+        
     }
 }

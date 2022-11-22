@@ -41,13 +41,14 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 //public routes
 
-
+Route::get('bins',[BinController::class,'index']);
 //Route::post('/register',[AuthController::class,'register']);
-Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
-Route::get('/Bin/search/{name}',[BinController::class,'search']);
-Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
-Route::get('/WormType/search/{}',[WormTypeController::class,'search']);
-Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
+//Route::get("/Bin",App\Http\Controllers\BinController::class);
+//Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
+//Route::get('/Bin/search/{name}',[BinController::class,'search']);
+//Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
+//Route::get('/WormType/search/{}',[WormTypeController::class,'search']);
+//Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
 
 
 
@@ -62,7 +63,7 @@ Route::group(['middleware' =>['auth:sanctum']], function () {
 
 //Route::post('/logout',[AuthController::class,'logout']);
 Route::resource("/User",App\Http\usercontroller::class);
-Route::resource("/Bin",App\Http\Controllers\BinController::class);
+//Route::resource("/Bin",App\Http\Controllers\BinController::class);
 Route::resource("/BinCondition",App\Http\BinConditionController::class);
 Route::resource("/WormType",App\Http\WormTypeController::class);
 Route::resource("/User",App\Http\usercontroller::class);

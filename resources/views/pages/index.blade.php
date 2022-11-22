@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/Bin">AddBox</a>
+              <a class="nav-link active" aria-current="page" href="bins">AddBox</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -88,5 +88,6 @@
         </div>
       </div>
     </nav>
+    @yield('content')
   </body>
 </html>
