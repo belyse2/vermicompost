@@ -32,16 +32,18 @@ use App\Http\Controllers\AuthController;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 //public routes
 
 Route::get('bins',[BinController::class,'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/delete{id}',[BinController::class,'deletebin']);
+Route::get('/singleBin',[BinController::class,'show']);
+
 //Route::post('/register',[AuthController::class,'register']);
 //Route::get("/Bin",App\Http\Controllers\BinController::class);
 //Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
@@ -69,7 +71,6 @@ Route::resource("/User",App\Http\usercontroller::class);
 
 Route::post('createbin',[BinController::class,'create_bin']);
 Route::get("/bin",[BinController::class,'store']);
-
 
 
 

@@ -12,7 +12,8 @@ class BinLocation extends Model
         'country',
         'district',
         'cell',
-        'village'
+        'village',
+        
     ];
 
   // this location belong to one bin

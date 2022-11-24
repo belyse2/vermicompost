@@ -43,9 +43,13 @@ class BinController extends Controller
         return $bin;
     }
 
-    public function show($id)
+
+    //function for view asingle bin
+
+
+    public function show()
     {
-        return Bin::find($id);
+        return view('pages/singleBin');
     }
 
     /**
@@ -90,6 +94,12 @@ class BinController extends Controller
        $bin->save();
        return redirect('bins');
 
+    }
+
+    public function deletebin($id){
+        $bin = Bin::find($id);
+        $bin->delete();
+        return redirect('/bins');
     }
   
 }

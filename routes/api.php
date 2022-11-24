@@ -10,7 +10,7 @@ use App\Http\Controllers\BinConditionController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\WormTypeController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\BinLocationController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,6 +35,8 @@ use App\Http\Controllers\AuthController;
     Route::get('/BinCondition/search/{}',[BinConditionController::class,'search']);
     Route::get('/WormType/search/{}',[WormTypeController::class,'search']);
     Route::get('/User/search/{Fname}',[usercontroller::class,'search']);
+    Route::post('/ADD_BinLocation',[BinLocationController::class,'store']);
+   // Route::resource('/User/search/{Fname}',[usercontroller::class,'search']);
 
 
 
