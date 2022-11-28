@@ -9,10 +9,10 @@
                 <td>number</td>
                 <td>location</td>
             </tr>
-            @foreach ($data as $data)
+            @foreach ($bin as $bin)
             <tr>
-                <td>{{$data->number}}</td>
-                <td>{{$data->location}}</td>
+                <td>{{$bin->number}}</td>
+                <td>{{$bin->location}}</td>
             
             </tr>
         @endforeach
@@ -32,16 +32,16 @@
         </thead>
         <tbody>
 
-        @foreach ($data as $data)
+        @foreach ($bin as $bin)
           <tr>
-            <td>{{$data->number}}</td>
-            <td>{{$data->location}}</td>
-            <td>{{$data->created_at}}</td>
-            <td>{{$data->updated_at}}</td>
+            <td>{{$bin->number}}</td>
+            <td>{{$bin->location}}</td>
+            <td>{{$bin->created_at}}</td>
+            <td>{{$bin->updated_at}}</td>
             <td>
-              <button class="btn btn-success"><a href="singleBin">View</a></button>
+             <a href={{"singleBin/".$bin->id}}> <button class="btn btn-success">View</button></a>
               <button class="btn btn-primary">update</button>
-              <a href={{"delete/".$data->id}}><button class="btn btn-danger">delete</button></a>
+              <a href={{"delete/".$bin->id}}><button class="btn btn-danger">delete</button></a>
             </td>
 
           </tr>

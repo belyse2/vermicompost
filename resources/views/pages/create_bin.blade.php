@@ -22,10 +22,10 @@
                       <input type="text" class="form-control" name="BinLocation"   id="BinLocation" placeholder="Enter BinLocation">
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="UserId">UserId</label>
                         <input type="number" class="form-control" name="UserId"   id="UserId" placeholder="Enter UserId">
-                      </div>
+                      </div> --}}
 
 
 

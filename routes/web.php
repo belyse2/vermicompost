@@ -41,8 +41,11 @@ Auth::routes();
 
 Route::get('bins',[BinController::class,'index']);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/delete{id}',[BinController::class,'deletebin']);
-Route::get('/singleBin',[BinController::class,'show']);
+
+Route::get('/delete/{id}',[BinController::class,'deletebin']);
+Route::get('/singleBin/{id}',[BinController::class,'show']);
+Route::post('createbin',[BinController::class,'create_bin']);
+Route::get("/bin",[BinController::class,'store']);
 
 //Route::post('/register',[AuthController::class,'register']);
 //Route::get("/Bin",App\Http\Controllers\BinController::class);
@@ -69,8 +72,8 @@ Route::resource("/User",App\Http\usercontroller::class);
 
 //bins_routes
 
-Route::post('createbin',[BinController::class,'create_bin']);
-Route::get("/bin",[BinController::class,'store']);
+
+
 
 
 

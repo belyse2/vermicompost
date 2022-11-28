@@ -12,10 +12,11 @@ class BinController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        $data=Bin::all();
-        return view('pages/bins',['data'=>$data]);
+        $bin=Bin::all();
+        return view('pages/bins',['bin'=>$bin]);
     }
 
     /**
@@ -47,9 +48,10 @@ class BinController extends Controller
     //function for view asingle bin
 
 
-    public function show()
-    {
-        return view('pages/singleBin');
+    public function show($id)
+    {   
+        $bin=Bin::find($id);
+        return view('pages.singleBin')->with('bin',$bin);
     }
 
     /**
@@ -87,10 +89,16 @@ class BinController extends Controller
     //     return view('pages/create_bin');
     // }
     public function create_bin(Request $request){
+        //  $request->validate(
+        //     ['number' =>'required|integer|unique:bins|number',
+        //     'location' =>'required|string|unique:bins|location'
+        //     ]
+            
+        // );
        $bin=new Bin;
        $bin->number=$request->BinNumber;
        $bin->location=$request->BinLocation;
-       $bin->user_id=$request->UserId;
+       $bin->user_id=auth()->user()->id;
        $bin->save();
        return redirect('bins');
 
