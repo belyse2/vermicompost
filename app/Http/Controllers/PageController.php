@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function _construct()
+    {
+        $this->middleware(['role:vermiculturistRole|adminRole']);
+    }
+   
+   
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +22,12 @@ class PageController extends Controller
         return view('pages.index');
     }
 
+
+
+    public function dashboard()
+    {
+        return view('pages.dashboard');
+    }
     /**
      * Show the form for creating a new resource.
      *

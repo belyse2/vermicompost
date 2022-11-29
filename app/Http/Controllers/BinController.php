@@ -7,6 +7,11 @@ use App\Models\Bin;
 
 class BinController extends Controller
 {
+
+    public function _construct()
+    {
+        $this->middleware(['role:vermiculturistRole|adminRole']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -51,6 +56,7 @@ class BinController extends Controller
     public function show($id)
     {   
         $bin=Bin::find($id);
+        // return view('pages.singleBin',['bin'=>$bin]);
         return view('pages.singleBin')->with('bin',$bin);
     }
 
@@ -69,17 +75,17 @@ class BinController extends Controller
         return $bin;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        Bin::destroy($id);
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy($id)
+    // {
+    //     Bin::destroy($id);
         
-    }
+    // }
     public function search($number)
     {
         return Bin::where('number','like','%'.$number.'%')->get();
@@ -105,9 +111,14 @@ class BinController extends Controller
     }
 
     public function deletebin($id){
+    
+
+        // if($request->user()->can('bin:delete')){
         $bin = Bin::find($id);
         $bin->delete();
         return redirect('/bins');
+    
+   // }
     }
   
 }

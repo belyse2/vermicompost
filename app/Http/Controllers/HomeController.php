@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    public function _construct()
+    {
+        $this->middleware(['role:vermiculturistRole|adminRole']);
+    }
     /**
      * Create a new controller instance.
      *

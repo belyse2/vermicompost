@@ -12,6 +12,7 @@ use App\Http\Controllers\BinConditionController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\WormTypeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,13 +40,15 @@ Auth::routes();
 
 //public routes
 
-Route::get('bins',[BinController::class,'index']);
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/bins',[BinController::class,'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
 
 Route::get('/delete/{id}',[BinController::class,'deletebin']);
 Route::get('/singleBin/{id}',[BinController::class,'show']);
 Route::post('createbin',[BinController::class,'create_bin']);
 Route::get("/bin",[BinController::class,'store']);
+Route::get("/dashboard",[PageController::class,'dashboard']);
 
 //Route::post('/register',[AuthController::class,'register']);
 //Route::get("/Bin",App\Http\Controllers\BinController::class);
@@ -62,24 +65,24 @@ Route::get("/bin",[BinController::class,'store']);
 // protected routes
 
 
-Route::group(['middleware' =>['auth:sanctum']], function () {
+// Route::group(['middleware' =>['auth:sanctum']], function () {
 
 
 
-//Route::post('/logout',[AuthController::class,'logout']);
-Route::resource("/User",App\Http\usercontroller::class);
+// //Route::post('/logout',[AuthController::class,'logout']);
+// Route::resource("/User",App\Http\usercontroller::class);
 
 
-//bins_routes
-
-
-
+// //bins_routes
 
 
 
-Route::resource("/BinCondition",App\Http\BinConditionController::class);
-Route::resource("/WormType",App\Http\WormTypeController::class);
-Route::resource("/User",App\Http\usercontroller::class);
 
 
-});
+
+// Route::resource("/BinCondition",App\Http\BinConditionController::class);
+// Route::resource("/WormType",App\Http\WormTypeController::class);
+
+
+
+// });

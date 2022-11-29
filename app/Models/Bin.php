@@ -14,7 +14,7 @@ class Bin extends Model
         "user_id"
     ];
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 // wormtypes many to many relation
@@ -23,7 +23,7 @@ class Bin extends Model
 
     public function Wormtype(){
         
-        return $this->belongsToMany(Wormtype::class);
+        return $this->belongsToMany(Wormtype::class, 'wormtype_id');
     }
 
 
