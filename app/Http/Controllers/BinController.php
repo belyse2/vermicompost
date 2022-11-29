@@ -72,7 +72,7 @@ class BinController extends Controller
         $bin=Bin::find($id);
         $input =$request->all();
         $bin->update($input);
-        return $bin;
+        return view('pages.updatebin')->with('bin',$bin);
     }
 
     // /**
@@ -95,18 +95,21 @@ class BinController extends Controller
     //     return view('pages/create_bin');
     // }
     public function create_bin(Request $request){
+
+        if ($request->user()->can('create-bins')){
         //  $request->validate(
         //     ['number' =>'required|integer|unique:bins|number',
         //     'location' =>'required|string|unique:bins|location'
         //     ]
             
         // );
-       $bin=new Bin;
+       $bin=new Bin();
        $bin->number=$request->BinNumber;
        $bin->location=$request->BinLocation;
        $bin->user_id=auth()->user()->id;
        $bin->save();
        return redirect('bins');
+    }
 
     }
 

@@ -40,7 +40,9 @@
             <td>{{$bin->updated_at}}</td>
             <td>
              <a href={{"/singleBin/".$bin->id}}> <button class="btn btn-success">View</button></a>
-              <button class="btn btn-primary">update</button>
+              {{-- <a href={{"update/".$bin->id}} <button class="btn btn-primary">update <button> </a> --}}
+              <a href={{"updatebin/".$bin->id}}> <button class="btn btn-primary">update</button></a>
+
               <a href={{"delete/".$bin->id}}><button class="btn btn-danger">delete</button></a>
             </td>
 

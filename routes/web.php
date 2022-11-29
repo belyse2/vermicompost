@@ -40,12 +40,13 @@ Auth::routes();
 
 //public routes
 
-Route::get('/bins',[BinController::class,'index']);
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-
+Route::get('bins',[BinController::class,'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/delete/{id}',[BinController::class,'deletebin']);
 Route::get('/singleBin/{id}',[BinController::class,'show']);
+
+Route::get('/updatebin/{id}',[BinController::class,'update']);
 Route::post('createbin',[BinController::class,'create_bin']);
 Route::get("/bin",[BinController::class,'store']);
 Route::get("/dashboard",[PageController::class,'dashboard']);
@@ -65,24 +66,24 @@ Route::get("/dashboard",[PageController::class,'dashboard']);
 // protected routes
 
 
-// Route::group(['middleware' =>['auth:sanctum']], function () {
+Route::group(['middleware' =>['auth:sanctum']], function () {
 
 
 
-// //Route::post('/logout',[AuthController::class,'logout']);
-// Route::resource("/User",App\Http\usercontroller::class);
+//Route::post('/logout',[AuthController::class,'logout']);
+Route::resource("/User",App\Http\usercontroller::class);
 
 
-// //bins_routes
-
-
-
+//bins_routes
 
 
 
-// Route::resource("/BinCondition",App\Http\BinConditionController::class);
-// Route::resource("/WormType",App\Http\WormTypeController::class);
 
 
 
-// });
+Route::resource("/BinCondition",App\Http\BinConditionController::class);
+Route::resource("/WormType",App\Http\WormTypeController::class);
+Route::resource("/User",App\Http\usercontroller::class);
+
+
+});
