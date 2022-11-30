@@ -100,7 +100,7 @@ class BinController extends Controller
        $bin->location=$request->BinLocation;
        $bin->user_id=auth()->user()->id;
        $bin->save();
-       return redirect('/bins');
+       return redirect('bins');
 
     }
 

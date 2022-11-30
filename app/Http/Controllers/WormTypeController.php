@@ -8,6 +8,12 @@ use App\Http\Requests\UpdateWormTypeRequest;
 
 class WormTypeController extends Controller
 {
+    
+    
+    public function _construct()
+    {
+        $this->middleware(['role:vermiculturistRole|adminRole']);
+    }
     /**
      * Display a listing of the resource.
      *

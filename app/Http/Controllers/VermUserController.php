@@ -7,6 +7,12 @@ use App\Models\VermUser;
 
 class VermUserController extends Controller
 {
+    
+    
+    public function _construct()
+    {
+        $this->middleware(['role:vermiculturistRole|adminRole']);
+    }
     /**
      * Display a listing of the resource.
      *

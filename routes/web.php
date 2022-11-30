@@ -40,11 +40,13 @@ Auth::routes();
 
 //public routes
 
-Route::get('bins',[BinController::class,'index']);
+Route::get('/bins',[BinController::class,'index']);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/delete/{id}',[BinController::class,'deletebin']);
 Route::get('/singleBin/{id}',[BinController::class,'show']);
+
+Route::get('/updatebin/{id}',[BinController::class,'update']);
 Route::post('createbin',[BinController::class,'create_bin']);
 Route::get("/bin",[BinController::class,'store']);
 Route::get("/dashboard",[PageController::class,'dashboard']);
