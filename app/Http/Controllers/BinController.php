@@ -51,7 +51,7 @@ class BinController extends Controller
     public function show($id)
     {   
         $bin=Bin::find($id);
-        return view('pages.singleBin')->with('bin',$bin);
+        return view('pages.singleBin',['bin'=>$bin]);
     }
 
     /**
@@ -100,7 +100,7 @@ class BinController extends Controller
        $bin->location=$request->BinLocation;
        $bin->user_id=auth()->user()->id;
        $bin->save();
-       return redirect('bins');
+       return redirect('/bins');
 
     }
 

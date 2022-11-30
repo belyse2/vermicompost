@@ -16,6 +16,12 @@ class PageController extends Controller
         return view('pages.index');
     }
 
+
+
+    public function dashboard()
+    {
+        return view('pages.dashboard');
+    }
     /**
      * Show the form for creating a new resource.
      *

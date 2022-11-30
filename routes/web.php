@@ -12,6 +12,7 @@ use App\Http\Controllers\BinConditionController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\WormTypeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,7 @@ Route::get('/delete/{id}',[BinController::class,'deletebin']);
 Route::get('/singleBin/{id}',[BinController::class,'show']);
 Route::post('createbin',[BinController::class,'create_bin']);
 Route::get("/bin",[BinController::class,'store']);
+Route::get("/dashboard",[PageController::class,'dashboard']);
 
 //Route::post('/register',[AuthController::class,'register']);
 //Route::get("/Bin",App\Http\Controllers\BinController::class);
